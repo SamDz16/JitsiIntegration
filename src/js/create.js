@@ -61,7 +61,7 @@ form.submit((e) => {
     // Pop up an alert to the user
     $(".jumbotron").after(
       $(
-        "<div class='alert alert-danger'><strong>Alert! </strong>This meeting already exists</div>"
+        "<div style='width: 80%; margin: 20px auto;' class='alert alert-danger'><strong>Alert! </strong>This meeting already exists</div>"
       )
         .delay(2000)
         .fadeOut(3000)
