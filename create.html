@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootswtach - Litera -->
+  <link rel="stylesheet" href="src/css/bootstrap.min.css">
+
+  <!-- Default font for the app -->
+  <style>
+    body{
+      font-family: 'Titillium Web', sans-serif;
+    }
+  </style>
+  <title>Create a Meet</title>
+</head>
+<body>
+  <div class="jumbotron">
+    <h1 class="text-center">Create a Meet</h1>
+  </div>
+
+  <div class="container">
+    <form>
+      <div class="form-group">
+        <label for="domain">Domain</label>
+        <input type="text" class="form-control" id="domain" value="meet.jit.si" readonly>
+      </div>
+      <div class="form-group">
+        <label for="roomName">Room Name</label>
+        <input type="text" class="form-control" id="roomName" placeholder="Enter room name" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password"placeholder="Enter password" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <!-- JQuery CDN - Content Delevery Network -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  
+  <!-- The Jitsi External API -->
+  <script src='https://meet.jit.si/external_api.js'></script>
+
+  <!-- Local JS file -->
+  <script src="src/js/create.js"></script>
+</body>
+</html>

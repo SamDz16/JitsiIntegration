@@ -7,16 +7,39 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
   
   <!-- Bootswatch - Litera -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/litera/bootstrap.min.css" integrity="sha512-R/uNB3G+peTms0mkfv2BpBF68fOfedoGD9N27cSzhUZvmuKD9VjW1VBnDApllJ+eYlPl7AocD//J5XYxO0nZ2Q==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="src/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/litera/bootstrap.min.css" integrity="sha512-R/uNB3G+peTms0mkfv2BpBF68fOfedoGD9N27cSzhUZvmuKD9VjW1VBnDApllJ+eYlPl7AocD//J5XYxO0nZ2Q==" crossorigin="anonymous" /> -->
+ 
+  <!-- Default font for the app -->
+  <style>
+    body{
+      font-family: 'Titillium Web', sans-serif;
+    }
+  </style>
+  
   <title>Jitsi Integration App</title>
 </head>
 <body>
   <div class="conatiner">
-    <h3 class="text-center">Jitsi Integration App</h3>
+    <h3 class="text-center p-4
+    m-4 bg-primary text-white">Jitsi Integration App</h3>
+    <div class="functions m-4">
+      <a class="btn btn-success btn-large" href="/create.html">Create a Meet</a>
+      <a class="btn btn-success btn-large" href="/meets.html">List all Meets</a>
+    </div>
+
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe id="meet" class="embed-responsive-item" src="" allowfullscreen></iframe>
+    </div>
   </div>
 
   <!-- JQuery CDN - Content Delevery Network -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-  <script src="src/index.js"></script>
+  
+  <!-- The Jitsi External API -->
+  <script src='https://meet.jit.si/external_api.js'></script>
+
+  <!-- Local JS file -->
+  <script src="src/js/index.js"></script>
 </body>
 </html>
