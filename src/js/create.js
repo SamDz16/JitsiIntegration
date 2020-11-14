@@ -57,6 +57,15 @@ form.submit((e) => {
     let meets = util.getMeets();
     meets.push(meet);
     localStorage.setItem("meets", JSON.stringify(meets));
+
+    // Pop up a success alert to the user
+    $(".jumbotron").after(
+      $(
+        "<div style='width: 80%; margin: 20px auto;' class='alert alert-success'><strong>Alert! </strong>This meeting was added successfully</div>"
+      )
+        .delay(2000)
+        .fadeOut(3000)
+    );
   } else {
     // Pop up an alert to the user
     $(".jumbotron").after(

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
+  <!-- Bootswtach - Litera -->
+  <link rel="stylesheet" href="src/css/bootstrap.min.css">
+
+  <!-- Default font for the app -->
+  <style>
+    body{
+      font-family: 'Titillium Web', sans-serif;
+    }
+    .wrapper{
+      min-height: 85vh;
+    }
+    footer{
+      color: #fff;
+    }
+    #meet-list{
+      margin: 20px auto;
+      max-width: 80%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+  </style>
+  <title>Meets</title>
+</head>
+<body>
+
+  <div class="wrapper">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="/">Jitsi App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navabar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/create.html">Create</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/meets.html">Meets</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Showcase -->
+
+    <div class="jumbotron">
+      <h1 class="text-center">List all Meets</h1>
+    </div>
+
+    <div id="meet-list">
+    </div>
+
+  </div> <!-- End wrapper -->
+
+  <!-- Footer -->
+    <footer class="bg-primary py-3">
+      <p class="text-center">Built with <i class="far fa-heart"></i> - HENDEL SAMY</p>
+      <p class="text-center">&copy; 2020</p>
+    </footer>
+
+  <!-- JQuery CDN - Content Delevery Network -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  
+  <!-- The Jitsi External API -->
+  <script src='https://meet.jit.si/external_api.js'></script>
+
+  <!-- Local JS file -->
+  <script src="src/js/meets.js"></script>
+</body>
+</html>

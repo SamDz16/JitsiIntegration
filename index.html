@@ -3,35 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
   <!-- Font awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
   
   <!-- Bootswatch - Litera -->
   <link rel="stylesheet" href="src/css/bootstrap.min.css">
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/litera/bootstrap.min.css" integrity="sha512-R/uNB3G+peTms0mkfv2BpBF68fOfedoGD9N27cSzhUZvmuKD9VjW1VBnDApllJ+eYlPl7AocD//J5XYxO0nZ2Q==" crossorigin="anonymous" /> -->
  
   <!-- Default font for the app -->
   <style>
     body{
       font-family: 'Titillium Web', sans-serif;
     }
+    footer{
+      color: #fff;
+    }
+    .wrapper{
+      min-height: 85vh;
+    }
+    #embed::before{
+      padding: 0;
+    }
   </style>
   
   <title>Jitsi Integration App</title>
 </head>
 <body>
-  <div class="conatiner">
-    <h3 class="text-center p-4
-    m-4 bg-primary text-white">Jitsi Integration App</h3>
-    <div class="functions m-4">
-      <a class="btn btn-success btn-large" href="/create.html">Create a Meet</a>
-      <a class="btn btn-success btn-large" href="/meets.html">List all Meets</a>
+  <div class="wrapper">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="/">Jitsi App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarHeader">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/create.html">Create</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/meets.html">Meets</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Showcase -->
+    <div class="jumbotron">
+      <h1 class="text-center mb-5">Jitsi Integration App</h1>
+    
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center">
+      <div>
+        <a style="margin-right: 20px;" class="btn btn-primary btn-large" href="/create.html">Create a Meet</a>
+        <a class="btn btn-outline-primary btn-large" href="/meets.html">Join meet</a>
+      </div>
+      <div>
+        <a class="btn btn-success btn-large" href="/meets.html">List all Meets</a>
+      </div>
     </div>
 
-    <div class="embed-responsive embed-responsive-16by9">
-      <iframe id="meet" class="embed-responsive-item" src="" allowfullscreen></iframe>
+
+      <!-- Embedded iframe -->
+      <div id="embed" class="embed-responsive embed-responsive-16by9"></div>
     </div>
   </div>
+  <!-- Footer -->
+  <footer class="bg-primary py-3">
+    <p class="text-center">Built with <i class="far fa-heart"></i> - HENDEL SAMY</p>
+    <p class="text-center">&copy; 2020</p>
+  </footer>
 
   <!-- JQuery CDN - Content Delevery Network -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
