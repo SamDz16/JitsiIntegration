@@ -85,7 +85,7 @@ $(".card-body").click(function () {
   const targetedMeet = util.targetedMeet(roomName);
 
   // Save the targeted meet to the local storage
-  localStorage.setItem("targetedMeet", JSON.stringify(targetedMeet));
+  localStorage.setItem("hasToBeEmbeded", JSON.stringify(targetedMeet));
 
   // Construct the url to the home
   location.href = util.constructUrl("index.html");

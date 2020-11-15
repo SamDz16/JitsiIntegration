@@ -60,19 +60,20 @@
     <div class="jumbotron">
       <h1 class="text-center mb-5">Jitsi Integration App</h1>
     
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center">
-      <div>
-        <a style="margin-right: 20px;" class="btn btn-primary btn-large" href="/create.html">Create a Meet</a>
-        <a class="btn btn-outline-primary btn-large" href="/meets.html">Join meet</a>
+      <div class="container" style="display: flex; justify-content: space-between; align-items: center">
+        <div>
+          <a style="margin-right: 20px;" class="btn btn-primary btn-large" href="/create.html">Create a Meet</a>
+          <a class="btn btn-outline-primary btn-large" href="/meets.html">Join meet</a>
+        </div>
+        <div>
+          <a class="btn btn-success btn-large" href="/meets.html">List all Meets</a>
+        </div>
       </div>
-      <div>
-        <a class="btn btn-success btn-large" href="/meets.html">List all Meets</a>
-      </div>
-    </div>
 
 
       <!-- Embedded iframe -->
-      <div id="embed" class="embed-responsive embed-responsive-16by9"></div>
+      <!-- <div id="embed" class="embed-responsive embed-responsive-16by9"></div> -->
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 30px;" id="meet"></div>
     </div>
   </div>
   <!-- Footer -->
