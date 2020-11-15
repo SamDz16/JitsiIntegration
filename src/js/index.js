@@ -37,12 +37,12 @@ function launchMeet(meet) {
   }, 10);
 }
 
-myApi.participantKicckedOut((res) => {
-  console.log(res);
-});
+// myApi.participantKicckedOut((res) => {
+//   console.log(res);
+// });
 
-myApi.videoConferenceLeft((res) => alert("VIDEO CONFERENCE LEFT", res));
+// myApi.videoConferenceLeft((res) => alert("VIDEO CONFERENCE LEFT", res));
 
-myApi.videoConferenceJoined((res) => alert("VIDEO CONFERENCE JOINED", res));
+// myApi.videoConferenceJoined((res) => alert("VIDEO CONFERENCE JOINED", res));
 
-myApi.participantLeft((res) => alert("PARTICIPANT LEFT", res));
+// myApi.participantLeft((res) => alert("PARTICIPANT LEFT", res));
