@@ -43,6 +43,12 @@ class util {
     }
     return hash;
   }
+
+  static targetedMeet(roomName) {
+    return this.getMeets().filter(
+      (meet) => meet.options.roomName === roomName
+    )[0];
+  }
 }
 
 // Handle submition
@@ -79,6 +85,10 @@ form.submit((e) => {
         .delay(2000)
         .fadeOut(3000)
     );
+
+    // Clear out the fields
+    roomName.val("");
+    password.val("");
   } else {
     // Pop up an alert to the user
     $(".jumbotron").after(
@@ -89,8 +99,21 @@ form.submit((e) => {
         .fadeOut(3000)
     );
   }
+});
 
-  // Clear out the fields
-  roomName.val("");
-  password.val("");
+// To do if their is a meet to modify
+$(document).ready(() => {
+  if (localStorage.getItem("hasToBeModified") !== null) {
+    // Means that their is a meet to be modified
+
+    // Retreive the meet
+    const meet = JSON.parse(localStorage.getItem("hasToBeModified"));
+
+    // Fill in the fields with the old values
+    roomName.val(meet.options.room);
+    password.val(meet.options.password);
+
+    // Remove the meet from localStorage
+    localStorage.removeItem("hasToBeModified");
+  }
 });
