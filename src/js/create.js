@@ -31,6 +31,18 @@ class util {
 
     return JSON.parse(localStorage.getItem("meets"));
   }
+
+  static hashCode(str) {
+    var hash = 0,
+      i,
+      chr;
+    for (i = 0; i < str.length; i++) {
+      chr = str.charCodeAt(i);
+      hash = (hash << 5) - hash + chr;
+      hash |= 0; // Convert to 32bit integer
+    }
+    return hash;
+  }
 }
 
 // Handle submition
@@ -45,8 +57,9 @@ form.submit((e) => {
 
   // Instanciate a new meet
   const meet = new Meet($("#domain").val(), {
-    roomName: roomName.val(),
-    perentNode: "document.querySelector('#meet')",
+    room: roomName.val(),
+    roomName: roomName.val() + util.hashCode(roomName.val()),
+    password: password.val(),
   });
 
   // Verify if the room doesn't exist in the local storage
