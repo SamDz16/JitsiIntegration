@@ -67,11 +67,14 @@ form.submit((e) => {
   // prevent default form submission behaviour
   e.preventDefault();
 
+  const createdAt = new Date();
+
   // Instanciate a new meet
   meet = new Meet($("#domain").val(), {
     room: roomName.val(),
     roomName: roomName.val() + util.hashCode(roomName.val()),
     password: password.val(),
+    createdAt: `${createdAt.toLocaleDateString()} - ${createdAt.toLocaleTimeString()}`,
   });
 
   // Verify if the room doesn't exist in the local storage

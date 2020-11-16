@@ -57,9 +57,10 @@ function listMeets() {
   <div class="card text-white bg-info mb-3" style="max-width: 20rem;" wfd-id="83">
     <div class="card-header text-center"><h5 class="card-title">Click to join</h5></div>
     <div class="card-body">
-      Room Name: <strong>${meet.options.room}</strong> <br />
-      Real Room Name: <strong>${meet.options.roomName}</strong> <br />
-      Password: <strong>${meet.options.password}</strong>
+      <i style="color: #000; margin-right: 5px" class="fas fa-hand-point-right"></i> Room Name: <strong>${meet.options.room}</strong> <br />
+      <i style="color: #000; margin-right: 5px" class="fas fa-hand-point-right"></i> Real Room Name: <strong>${meet.options.roomName}</strong> <br />
+      <i style="color: #000; margin-right: 5px" class="fas fa-hand-point-right"></i> Password: <strong>${meet.options.password}</strong> <br />
+      <i style="color: #000; margin-right: 5px" class="fas fa-hand-point-right"></i> Created At: <strong>${meet.options.createdAt}</strong>
     </div>
     <div class="card-footer text-center">
       <button onclick="editMeet(this)" class="btn btn-success"><i class="fas fa-edit"></i><span style="display: none">${meet.options.roomName}</span></button>
