@@ -9,12 +9,7 @@ $(document).ready(() => {
     // Show the disabled button
     $("button.btn-danger").prop("disabled", false);
 
-    // Display the meet container as flex
-    $("#meet").css("display", "flex");
-
-    // Remove the meet from localStorage
-    localStorage.removeItem("hasToBeEmbeded");
-
+    // launch effectively the meet
     launchMeet(meet);
   }
 });
@@ -46,6 +41,9 @@ function launchMeet(meet) {
 $("button.btn-danger").click(() => {
   // Disable back the button
   $("button.btn-danger").prop("disabled", true);
+
+  // Remove the meet from localStorage
+  localStorage.removeItem("hasToBeEmbeded");
 
   // Hide the meet
   $("#meet").css("display", "none");
