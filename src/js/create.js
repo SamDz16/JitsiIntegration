@@ -4,11 +4,6 @@ class Meet {
     this.domain = domain;
     this.options = options;
   }
-
-  jitsi() {
-    // console.log(this.domain, this.options);
-    const api = new JitsiMeetExternalAPI(this.domain, this.options);
-  }
 }
 
 // Utility class
@@ -49,6 +44,14 @@ class util {
       (meet) => meet.options.roomName === roomName
     )[0];
   }
+
+  static constructUrl(target) {
+    const href = location.href.split("/");
+    href[1] = "//";
+    href[href.length - 1] = `/${target}`;
+
+    return href.join("");
+  }
 }
 
 // Handle submition
@@ -57,12 +60,15 @@ const password = $("#password");
 const submitBtn = $("button[type='submit']");
 const form = $(".container form");
 
+// Now meet is accessible everywhere in this documnet
+let meet = null;
+
 form.submit((e) => {
   // prevent default form submission behaviour
   e.preventDefault();
 
   // Instanciate a new meet
-  const meet = new Meet($("#domain").val(), {
+  meet = new Meet($("#domain").val(), {
     room: roomName.val(),
     roomName: roomName.val() + util.hashCode(roomName.val()),
     password: password.val(),
@@ -89,6 +95,9 @@ form.submit((e) => {
     // Clear out the fields
     roomName.val("");
     password.val("");
+
+    //Pop up the suggestion
+    $("form + div").slideDown("slow");
   } else {
     // Pop up an alert to the user
     $(".jumbotron").after(
@@ -117,3 +126,20 @@ $(document).ready(() => {
     localStorage.removeItem("hasToBeModified");
   }
 });
+
+// Handling the suggestion
+function yes() {
+  // Popping off the suggestion
+  $("form + div").slideUp("slow");
+
+  // Save the meet to the local storage
+  localStorage.setItem("hasToBeEmbeded", JSON.stringify(meet));
+
+  // Construct the url to the index.html
+  location.href = util.constructUrl("index.html");
+}
+
+function no() {
+  // Popping off the suggestion
+  $("form + div").slideUp("slow");
+}
