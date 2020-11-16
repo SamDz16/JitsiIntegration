@@ -28,6 +28,7 @@
       max-width: 80%;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
       gap: 20px;
     }
     .card{
@@ -38,6 +39,18 @@
     }
     .card-body{
       cursor: pointer;
+    }
+    @media(max-width: 752px){
+      #meet-list{
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+      }
+    }
+    @media(max-width: 550px){
+      #meet-list{
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
     }
   </style>
   <title>Meets</title>
