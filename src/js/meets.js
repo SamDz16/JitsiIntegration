@@ -80,7 +80,7 @@ listMeets();
 $(".card-body").click(function () {
   // Retrieve the roomName
   const targetCard = this;
-  const roomName = targetCard.children[2].textContent.trim();
+  const roomName = targetCard.children[4].textContent.trim();
 
   // Retrive the targeted meet base on the roomName
   const targetedMeet = util.targetedMeet(roomName);

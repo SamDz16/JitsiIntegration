@@ -6,6 +6,12 @@ $(document).ready(() => {
     // Means their is a meet to embed
     const meet = JSON.parse(localStorage.getItem("hasToBeEmbeded"));
 
+    // Show the disabled button
+    $("button.btn-danger").prop("disabled", false);
+
+    // Display the meet container as flex
+    $("#meet").css("display", "flex");
+
     // Remove the meet from localStorage
     localStorage.removeItem("hasToBeEmbeded");
 
@@ -36,6 +42,22 @@ function launchMeet(meet) {
     });
   }, 10);
 }
+
+$("button.btn-danger").click(() => {
+  // Disable back the button
+  $("button.btn-danger").prop("disabled", true);
+
+  // Hide the meet
+  $("#meet").css("display", "none");
+
+  // test
+  myApi.readyToClose((res) => {
+    alert("Leave", res);
+  });
+
+  // Leave the meet
+  myApi.dispose();
+});
 
 // myApi.participantKicckedOut((res) => {
 //   console.log(res);
